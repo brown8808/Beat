@@ -1,11 +1,11 @@
 package dynamic_beat_1;
 
-
 import javazoom.jl.player.Player;
 
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
+
 
 public class Music extends Thread {
     private Player player;
@@ -32,12 +32,12 @@ public class Music extends Thread {
         return player.getPosition();
     }
 
+
     public void close() {
         isLoop = false;
         player.close();
         this.interrupt();
     }
-
     @Override
     public void run() {
         try {
@@ -51,6 +51,4 @@ public class Music extends Thread {
             System.out.println(e.getMessage());
         }
     }
-
-
 }
