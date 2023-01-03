@@ -24,7 +24,7 @@ public class Game extends Thread{
     private String titleName;
     private String difficulty;
     private String musicTitle;
-    private String gameMusic;
+    private Music gameMusic;
 
     ArrayList<Note> noteList = new ArrayList<Note>();
 
@@ -58,7 +58,7 @@ public class Game extends Thread{
         g.drawImage(noteRouteLineImage, 1052, 30, null);
         g.drawImage(gameInfoImage, 0, 660, null);
         g.drawImage(judgementLineImage, 0, 580, null);
-        for (int I = 0; i < noteList.size(); i++)
+        for (int i = 0; i < noteList.size(); i++)
         {
             Note note = noteList.get(i);
             note.screenDraw(g);

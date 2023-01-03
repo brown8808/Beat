@@ -23,10 +23,9 @@ public class Note extends Thread {
             g.drawImage(noteBasicImage, x, y, null);
             g.drawImage(noteBasicImage, x + 100, y, null);
         }
+    }
     public void drop() {
-            y += Main.NOTE_SPEED;
-        }
-
+        y += Main.NOTE_SPEED;
     }
     @Override
     public void run() { // 쓰레드의 실행을 위한 함수

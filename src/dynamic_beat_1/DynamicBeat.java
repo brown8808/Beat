@@ -72,12 +72,12 @@ public class DynamicBeat extends JFrame {
 
         addKeyListener(new KeyListener());
 
-        trackList.add(new Track("Mighty Title Image.png", "Mighty Start Image.png",
-                "Mighty Game Image.png", "music1Selected.mp3", "music1.mp3","music1"));
-        trackList.add(new Track("Energy Title Image.png", "Energy Start Image.png",
-                "Energy Game Image.png", "music2Selected.mp3", "music2.mp3", "music2"));
-        trackList.add(new Track("Wild Flower Title Image.png", "Wild Flower Start Image.png",
-                "Wild Flower Game Image.png", "music3Selected.mp3", "music3.mp3", "music3"));
+        trackList.add(new Track("Music1 Title Image.png", "Music1 Start Image.png",
+                "Music1 Game Image.png", "music1.mp3", "music1.mp3","music1"));
+        trackList.add(new Track("Music2 Title Image.png", "Music2 Start Image.png",
+                "Music2 Game Image.png", "music2.mp3", "music2.mp3", "music2"));
+        trackList.add(new Track("Music3 Title Image.png", "Music3 Start Image.png",
+                "Music3 Game Image.png", "music3.mp3", "music3.mp3", "music3"));
 
         exitButton.setBounds(1245, 0, 30, 30);
         exitButton.setBorderPainted(false);
@@ -326,11 +326,11 @@ public class DynamicBeat extends JFrame {
     public void paint(Graphics g) {
         screenImage = createImage(Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT);
         screenGraphic = screenImage.getGraphics();
-        screenDraw(screenGraphic);
+        screenDraw((Graphics2D) screenGraphic);
         g.drawImage(screenImage, 0, 0, null);
     }
 
-    public void screenDraw(Graphics g) {
+    public void screenDraw(Graphics2D g) {
         g.drawImage(background, 0, 0, null);
         if(isMainScreen)
         {
