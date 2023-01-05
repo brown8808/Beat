@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f830f93-c887-4c37-b30e-0f9ef32c9b48" name="Changes" comment="" />
+    <list default="true" id="5f830f93-c887-4c37-b30e-0f9ef32c9b48" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/dynamic_beat/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_beat/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dynamic_beat/Track.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_beat/Track.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

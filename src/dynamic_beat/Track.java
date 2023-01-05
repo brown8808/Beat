@@ -57,11 +57,13 @@ public class Track {
 
     // 생성자 = 트랙이라는 클래스로 새로운 변수를 만들 때 변수들을 초기화하는 메소드
     public Track(String titleImage, String startImage, String gameImage, String startMusic, String gameMusic, String titleName) {
+        super();
         this.titleImage = titleImage;
         this.startImage = startImage;
         this.gameImage = gameImage;
         this.startMusic = startMusic;
         this.gameMusic = gameMusic;
+        this.titleName = titleName;
     }
 }
 

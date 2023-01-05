@@ -395,7 +395,7 @@ public class Game extends Thread{
     public void judge(String input) {
         for (int i = 0; i <noteList.size(); i++) {
             Note note = noteList.get(i);
-            if (input.equals(note.getNoteTypoe())) {
+            if (input.equals(note.getNoteType())) {
                 judgeEvent(note.judge());
                 break;
             }
