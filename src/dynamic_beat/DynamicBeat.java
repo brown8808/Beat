@@ -1,4 +1,4 @@
-package dynamic_beat_1;
+package dynamic_beat;
 
 import javax.swing.*;
 import java.awt.*;
@@ -49,7 +49,7 @@ public class DynamicBeat extends JFrame {
     private boolean isMainScreen = false;
     private boolean isGameScreen = false;
 
-    ArrayList<Track> trackList = new ArrayList<>();
+    ArrayList<Track> trackList = new ArrayList<Track>();
     private Image titleImage;
     private Image selectedImage;
     private Music selectedMusic;
@@ -59,6 +59,13 @@ public class DynamicBeat extends JFrame {
     public static Game game;
 
     public DynamicBeat() {
+        trackList.add(new Track("Music1 Title Image.png", "Music1 Start Image.png",
+                "Music1 Game Image.png", "music1.mp3", "music1.mp3","music1"));
+        trackList.add(new Track("Music2 Title Image.png", "Music2 Start Image.png",
+                "Music2 Game Image.png", "music2.mp3", "music2.mp3", "music2"));
+        trackList.add(new Track("Music3 Title Image.png", "Music3 Start Image.png",
+                "Music3 Game Image.png", "music3.mp3", "music3.mp3", "music3"));
+
         setUndecorated(true);
         setTitle("Dynamic Beat"); // 게임 이름 설정
         setSize(Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT);
@@ -71,13 +78,6 @@ public class DynamicBeat extends JFrame {
         introMusic.start();
 
         addKeyListener(new KeyListener());
-
-        trackList.add(new Track("Music1 Title Image.png", "Music1 Start Image.png",
-                "Music1 Game Image.png", "music1.mp3", "music1.mp3","music1"));
-        trackList.add(new Track("Music2 Title Image.png", "Music2 Start Image.png",
-                "Music2 Game Image.png", "music2.mp3", "music2.mp3", "music2"));
-        trackList.add(new Track("Music3 Title Image.png", "Music3 Start Image.png",
-                "Music3 Game Image.png", "music3.mp3", "music3.mp3", "music3"));
 
         exitButton.setBounds(1245, 0, 30, 30);
         exitButton.setBorderPainted(false);
@@ -249,7 +249,7 @@ public class DynamicBeat extends JFrame {
         add(easyButton);
 
         hardButton.setVisible(false);
-        hardButton.setBounds(375, 580, 250, 67);
+        hardButton.setBounds(655, 580, 250, 67);
         hardButton.setBorderPainted(false);
         hardButton.setContentAreaFilled(false);
         hardButton.setFocusPainted(false);
@@ -276,7 +276,7 @@ public class DynamicBeat extends JFrame {
         add(hardButton);
 
         backButton.setVisible(false);
-        backButton.setBounds(375, 580, 250, 67);
+        backButton.setBounds(20, 50, 60, 60);
         backButton.setBorderPainted(false);
         backButton.setContentAreaFilled(false);
         backButton.setFocusPainted(false);
@@ -342,6 +342,11 @@ public class DynamicBeat extends JFrame {
             game.screenDraw(g);
         }
         paintComponents(g);
+        try {
+            Thread.sleep(5);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
         this.repaint();
     }
 
@@ -381,9 +386,9 @@ public class DynamicBeat extends JFrame {
         // 게임하기로 마음먹은 그 곡에 대한 이미지를 보여줌, 현재 선택이된 곡의 이미지
         backButton.setVisible(true);
         isGameScreen = true;
-        setFocusable(true);
         game = new Game(trackList.get(nowSelected).getTitleName(), difficulty, trackList.get(nowSelected).getGameMusic());
-
+        game.start();
+        setFocusable(true);
     }
 
     public void backMain() { // 메인 함수로 돌아왔을 때
